@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import { peopleList } from "@/api/peopleInfo";
+// import { peopleList } from "@/api/peopleInfo";
 export default {
   data() {
     return {
@@ -21,14 +21,9 @@ export default {
     //   //let data = await peopleList("1");
     //   this.data = data || [];
     // }
-    getPeopleList() {
-      let data = peopleList(JSON.parse(localStorage.getItem("uinfo")).id);
-      //let data = await peopleList("1");
-      this.data = data || [];
-    }
   },
   mounted() {
-    this.getPeopleList();
+    // this.getPeopleList();
   }
 };
 </script>
