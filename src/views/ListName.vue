@@ -12,7 +12,32 @@
 export default {
   data() {
     return {
-      data: []
+      data: [
+        {
+          name: "zhangting",
+          phone: "13366668888"
+        },
+        {
+          name: "papakapa",
+          phone: "15566668888"
+        },
+        {
+          name: "张三",
+          phone: "13366668888"
+        },
+        {
+          name: "李四",
+          phone: "15566668888"
+        },
+        {
+          name: "王五",
+          phone: "13366668888"
+        },
+        {
+          name: "李丽",
+          phone: "15566668888"
+        },
+      ]
     };
   },
   methods: {
@@ -28,9 +53,9 @@ export default {
 };
 </script>
 <style scoped>
-.liborder {
+/* .liborder {
   border-bottom: 1px solid #cccccc;
-}
+} */
 ul {
   margin: 5px;
 }

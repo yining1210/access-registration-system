@@ -11,31 +11,52 @@
   </div>
 </template>
 <style scoped>
-.liborder { 
+/* .liborder { 
   border-bottom: 1px solid #cccccc;
-}
+} */
 ul {
   margin: 5px;
 }
 </style>
 <script>
-import { searchPeople } from "@/api/peopleInfo";
+// import { searchPeople } from "@/api/peopleInfo";
 export default {
   data() {
     return {
       searchValue: "",
-      data: []
+      data: [
+        {
+          name: "zhangting",
+          phone: "13366668888"
+        },
+        {
+          name: "papakapa",
+          phone: "15566668888"
+        },
+        {
+          name: "张三",
+          phone: "13366668888"
+        },
+        {
+          name: "李四",
+          phone: "15566668888"
+        },
+        {
+          name: "王五",
+          phone: "13366668888"
+        }
+      ]
     };
   },
   methods: {
-    async getsearchList() {
-      let data = await searchPeople({search:this.searchValue,userid:JSON.parse(localStorage.getItem("uinfo")).id});
-      //let data = await searchPeople({ search: this.searchValue, userid: "1" });
-      this.data = data || [];
-    }
+    // async getsearchList() {
+    //   let data = await searchPeople({search:this.searchValue,userid:JSON.parse(localStorage.getItem("uinfo")).id});
+    //   //let data = await searchPeople({ search: this.searchValue, userid: "1" });
+    //   this.data = data || [];
+    // }
   },
   mounted() {
-    this.getsearchList();
+    // this.getsearchList();
   }
 };
 </script>

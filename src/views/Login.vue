@@ -1,6 +1,6 @@
 <template>
   <div id="index">
-    <mt-header title="出入人员登记系统" fixed></mt-header>
+    <mt-header title="人员出行登记系统" fixed></mt-header>
     <div class="content-div">
       <mt-field label="用户名" placeholder="请输入用户名" v-model="username"></mt-field>
       <mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field>
