@@ -1,6 +1,6 @@
 <template>
   <div id="index">
-    <mt-header title="出入人员登记系统"></mt-header>
+    <mt-header title="人员出行登记系统"></mt-header>
     <div class="text-body" style="margin-top:90px">
       <h4 >操作成功</h4>
     </div>

@@ -1,6 +1,6 @@
 <template>
   <div id="index">
-    <mt-header title="出入人员登记系统" fixed>
+    <mt-header title="人员出行登记系统" fixed>
       <router-link to="/" slot="left">
         <mt-button icon="back"></mt-button>
       </router-link>

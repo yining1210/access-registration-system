@@ -1,6 +1,6 @@
 <template>
   <div id="index">
-    <mt-header title="出入人员登记系统" fixed></mt-header>
+    <mt-header title="人员出行登记系统" fixed></mt-header>
     <div class="content-div">
       <mt-field label="手机号码" :state="state" placeholder="请输入手机号" v-model="phone"></mt-field>
       <mt-button type="primary" size="large" @click.native="handleClick">进入</mt-button>

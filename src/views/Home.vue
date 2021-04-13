@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <mt-header title="出入人员登记系统" fixed></mt-header>
+    <mt-header title="人员出行登记系统" fixed></mt-header>
 
     <div class="content-div">
       <router-view/>
