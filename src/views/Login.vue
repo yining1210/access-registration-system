@@ -12,30 +12,32 @@
   </div>
 </template>
 <script>
-// import * as sso from '@/api/auth'
+import * as sso from '@/api/auth'
 import FooterDiv from "../components/FooterDiv.vue";
+import { Toast } from "mint-ui";
 export default {
   components: {
     "footer-div": FooterDiv
   },
   data() {
     return {
-      username: "admin",
-      password: "123456"
+      username: "",
+      password: ""
     };
   },
   methods: {
     async handleClick() {
-      // let data = await sso.login({
-      //   username: this.username,
-      //   password: this.password
-      // });
-      let data = {
+      await sso.login({
         username: this.username,
         password: this.password
-      };
-      localStorage.setItem('uinfo', JSON.stringify(data))
-      this.$router.push('/')
+      }).then((res)=>{
+        if(res.data.isRight==true){
+          localStorage.setItem('uinfo', JSON.stringify(res.data));
+          this.$router.push('/');
+        }else{
+          Toast("账号或密码错误！");
+        }
+      });
     },
 
     toReg() {

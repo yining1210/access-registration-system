@@ -31,7 +31,7 @@
 </template>
 <script>
 import QRCode from 'qrcodejs2'
-import * as sso from '@/api/auth'
+//import * as sso from '@/api/auth'
 
 export default {
   data() {
@@ -51,10 +51,8 @@ export default {
       });
     },
     logout() {
-      sso.logout().then(() => {
-        localStorage.removeItem('uinfo')
-        this.$router.push('/login')
-      })
+      localStorage.removeItem('uinfo')
+      this.$router.push('/login')
     }
   },
   mounted() {

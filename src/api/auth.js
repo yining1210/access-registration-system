@@ -1,7 +1,7 @@
 import vue from 'vue'
 
 // 登陆接口
-const login = params => vue.axios.post("/auth/login/", params)
+const login = params => vue.axios.post("/login", params)
 
 // 退出
 const logout = params => vue.axios.delete("/auth/logout/", params)
