@@ -4,59 +4,42 @@
       <mt-button type="primary" size="small" @click.native="getsearchList">搜索</mt-button>
     </mt-field>
     <ul>
-      <li class="liborder" v-for="(item,i) in data" :key="i">
+      <li class="liborder" v-for="(item,i) in results" :key="i">
         <mt-cell :title="item.name" :to="'/peopleForm?id='+item.id " is-link :label="item.comefrom"></mt-cell>
       </li>
     </ul>
   </div>
 </template>
 <style scoped>
-/* .liborder { 
+.liborder { 
   border-bottom: 1px solid #cccccc;
-} */
+}
 ul {
   margin: 5px;
 }
 </style>
 <script>
-// import { searchPeople } from "@/api/peopleInfo";
+import { searchPeople } from "@/api/peopleInfo";
 export default {
   data() {
     return {
       searchValue: "",
-      data: [
-        {
-          name: "zhangting",
-          phone: "13366668888"
-        },
-        {
-          name: "papakapa",
-          phone: "15566668888"
-        },
-        {
-          name: "张三",
-          phone: "13366668888"
-        },
-        {
-          name: "李四",
-          phone: "15566668888"
-        },
-        {
-          name: "王五",
-          phone: "13366668888"
-        }
-      ]
+      // data: {},
+      results: {}
+
+
     };
   },
   methods: {
-    // async getsearchList() {
-    //   let data = await searchPeople({search:this.searchValue,userid:JSON.parse(localStorage.getItem("uinfo")).id});
-    //   //let data = await searchPeople({ search: this.searchValue, userid: "1" });
-    //   this.data = data || [];
-    // }
+    async getsearchList() {
+      let data = await searchPeople({search:this.searchValue,userId:JSON.parse(localStorage.getItem("uinfo")).id});
+      //let data = await searchPeople({ search: this.searchValue, userid: "1" });
+      // this.data = data.data || [];
+      this.results =data.data.results;
+    }
   },
   mounted() {
-    // this.getsearchList();
+    this.getsearchList();
   }
 };
 </script>

@@ -114,7 +114,7 @@ export default {
         contactname: "",
         contactphone: "",
         temperature: 35,
-        userid: null
+        userId: null
       },
 
       temperature10: 350,
@@ -263,7 +263,7 @@ export default {
     }
   },
   mounted() {
-    this.data.userid = JSON.parse(localStorage.getItem("uinfo")).id;
+    this.data.userId = JSON.parse(localStorage.getItem("uinfo")).id;
     // if (/^[1][3,4,5,7,8][0-9]{9}$/.test(this.data.phone)) {
     //   this.rules.phone = "success";
     // } else {
