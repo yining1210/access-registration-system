@@ -5,8 +5,8 @@ module.exports = {
         port: 8081,
         proxy: {
             '/api':{
-                target: 'http://dengji.fangyi.cniotroot.cn',
-                // target: 'http://1-101.ci.maintain.cniotroot.cn/',   // ci环境
+                target: 'http://1.15.226.9:1210/api',
+                // target: 'http://1.15.226.9:1210/',   // ci环境
                 changeOrigin: true
             }
         },

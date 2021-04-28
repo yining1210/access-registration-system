@@ -8,54 +8,28 @@
   </div>
 </template>
 <script>
-// import { peopleList } from "@/api/peopleInfo";
+import { peopleList } from "@/api/peopleInfo";
 export default {
   data() {
     return {
-      data: [
-        {
-          name: "zhangting",
-          phone: "13366668888"
-        },
-        {
-          name: "papakapa",
-          phone: "15566668888"
-        },
-        {
-          name: "张三",
-          phone: "13366668888"
-        },
-        {
-          name: "李四",
-          phone: "15566668888"
-        },
-        {
-          name: "王五",
-          phone: "13366668888"
-        },
-        {
-          name: "李丽",
-          phone: "15566668888"
-        },
-      ]
+      data: []
     };
   },
   methods: {
-    // async getPeopleList() {
-    //   let data = await peopleList(JSON.parse(localStorage.getItem("uinfo")).id);
-    //   //let data = await peopleList("1");
-    //   this.data = data || [];
-    // }
+    async getPeopleList() {
+      let data = await peopleList(JSON.parse(localStorage.getItem("uinfo")).id);
+      this.data = data.data || [];
+    }
   },
   mounted() {
-    // this.getPeopleList();
+    this.getPeopleList();
   }
 };
 </script>
 <style scoped>
-/* .liborder {
+.liborder {
   border-bottom: 1px solid #cccccc;
-} */
+}
 ul {
   margin: 5px;
 }

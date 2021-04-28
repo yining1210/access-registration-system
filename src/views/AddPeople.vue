@@ -19,13 +19,13 @@
       >
         <span style="color:red">*</span>
       </mt-field>
-      <mt-radio title="是否本地户籍：" v-model="data.is_local" :options="options1"></mt-radio>
-      <mt-radio title="是否来自湖北：(必填)" v-model="data.is_fromhubei" :options="options2"></mt-radio>
+      <mt-radio title="是否本地户籍：" v-model="data.isLocal" :options="options1"></mt-radio>
+      <mt-radio title="是否来自湖北：(必填)" v-model="data.isFromhubei" :options="options2"></mt-radio>
       <mt-field label="来源地区：" :state="rules.comefrom" placeholder="请输入地址" v-model="data.comefrom">
         <span style="color:red">*</span>
       </mt-field>
-      <mt-field label="现居住：" placeholder="请输入地址" v-model="data.desc"></mt-field>
-      <mt-radio title="春运出行方式：" v-model="data.travel_mode" :options="options3"></mt-radio>
+      <!-- <mt-field label="现居住：" placeholder="请输入地址" v-model="data.desc"></mt-field> -->
+      <mt-radio title="春运出行方式：" v-model="data.travelMode" :options="options3"></mt-radio>
       <mt-field label="车牌/班次：" placeholder="车牌/列车号/航班（选填）" v-model="data.carid"></mt-field>
       <mt-field
         label="返回日期："
@@ -36,7 +36,7 @@
       >
         <span style="color:red">*</span>
       </mt-field>
-      <!-- <mt-field label="备注：" placeholder="备注说明情况" v-model="data.desc"></mt-field> -->
+      <mt-field label="备注：" placeholder="备注说明情况" v-model="data.comment"></mt-field>
     </div>
 
     <div class="text-body">
@@ -108,13 +108,13 @@ export default {
         comefrom: "",
         travel_mode: "",
         springtime: null,
-        desc: "",
+        comment: "",
 
         reason: "",
         contactname: "",
         contactphone: "",
         temperature: 35,
-        userid: null
+        userId: null
       },
 
       temperature10: 350,
@@ -263,7 +263,7 @@ export default {
     }
   },
   mounted() {
-    this.data.userid = JSON.parse(localStorage.getItem("uinfo")).id;
+    this.data.userId = JSON.parse(localStorage.getItem("uinfo")).id;
     // if (/^[1][3,4,5,7,8][0-9]{9}$/.test(this.data.phone)) {
     //   this.rules.phone = "success";
     // } else {

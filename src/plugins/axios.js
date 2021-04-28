@@ -9,7 +9,7 @@ import {
 } from 'mint-ui';
 
 let config = {
-  baseURL: '/api',
+  baseURL: 'http://1.15.226.9:1210/api',
   timeout: 60000
 };
 
