@@ -12,6 +12,7 @@ const getCurrUserInfo = () => vue.axios.get("/auth/profile/")
 //修改密码
 const change = params => vue.axios.put("/auth/password/", params)
 
+// 注册账号
 const register = params => vue.axios.post("/admin/users/", params)
 
 export {
